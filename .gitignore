@@ -4,6 +4,8 @@
 !/.Qbian/disks/.gitkeep
 !/.Qbian/ssh/.gitkeep
 
+
+# git assume unchanged : in --create-default $@
 injects/default/etc/hostname
 injects/default/etc/hosts
 injects/default/root/qbian.conf

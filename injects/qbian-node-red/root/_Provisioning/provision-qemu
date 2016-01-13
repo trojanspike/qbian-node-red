@@ -49,7 +49,8 @@ sed -i "s/{USER}/$USER/g" /etc/init.d/qbian-node-red && \
 # install c9 ide : https://github.com/c9/core/
 # /bin/su - $USER -c "cd ~/ && c9-install" && \
 /bin/su - $USER -c "cd ~/node-red-user-dir/ && wget https://raw.githubusercontent.com/node-red/node-red/master/settings.js" && \
-/bin/su - $USER -c "cd ~/ && npm i node-red-contrib-ui node-red-contrib-gpio node-red-contrib-firebase node-red-contrib-usb" && \
+# note : raspi-io only support Raspberry Pi Model B Rev 1 or newer -
+/bin/su - $USER -c "cd ~/node-red-user-dir/ && npm i node-red-contrib-ui node-red-contrib-gpio node-red-contrib-firebase wiring-pi" && \
 /bin/su - $USER -c "git clone https://github.com/trojanspike/qbian-server.git ~/Server" && \
 # Ruby RVM install : https://rvm.io/
 ## curl -sSL https://rvm.io/mpapis.asc | gpg --import - && \
