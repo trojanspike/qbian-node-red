@@ -31,6 +31,7 @@ git clone https://github.com/quick2wire/quick2wire-gpio-admin.git quck2wire && \
 cd quck2wire && make install && cd ~/ && \
 git clone https://github.com/creationix/nvm.git /etc/skel/.nvm && cd /etc/skel/.nvm  && git checkout v0.25.4 && cd ~/ && \
 #Add user
+sed -i "s/{USER}/$USER/g" /etc/skel/forever-config.json && \
 useradd --shell /bin/bash --create-home --groups gpio,i2c,sudo,dialout --comment "Device user" $USER && passwd $USER <<EFO
 $PASS
 $PASS
