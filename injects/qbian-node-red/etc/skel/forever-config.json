@@ -3,7 +3,7 @@
 	"append"	: 	true,
 	"watch"		: 	false,
 	"script"	: 	"node-red",
-	"args"		: 	["-s", "node-red-user-dir/settings.js", "-u", "node-red-user-dir/", "-v"],
+	"args"		: 	["-s", "/home/qbian/node-red-user-dir/settings.js", "-u", "/home/qbian/node-red-user-dir/", "-v"],
 	"command"	: 	"sudo-node",
 	"sourceDir"	: 	"/home/qbian/.nvm/versions/io.js/v3.0.0/bin",
 	"logFile"	: 	"/home/qbian/node-red-user-dir/Node-red-forever.log",
