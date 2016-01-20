@@ -47,6 +47,12 @@ sed -i "s/{USER}/$USER/g" /etc/sudoers.d/user-perm && \
 /bin/su - $USER -c "cd ~/ && nvm install iojs-3.0.0 && nvm alias default iojs-3.0.0 && npm i npm -g" && \
 # ? other package? nodemon, jslint??
 /bin/su - $USER -c "cd ~/ && npm i forever node-gyp bower grunt-cli -g && cd ~" && \
+@ TODO -> note
+Git clone the node-red repo : DEFINED in the Qbianfile
+install the global required modules : grunt-cli , nodemon , jslint >
+: npm i -g grunt-cli jsonlint jshint nodemon node-gyp
+: Rebuild -> npm rebuild node-sass
+@ -> note
 /bin/su - $USER -c "cd ~/ && npm install -g node-red" && \
 sed -i "s/{USER}/$USER/g" /etc/init.d/qbian-node-red && \
 # install c9 ide : https://github.com/c9/core/
