@@ -16,5 +16,7 @@ fi
 
 export useMySSH=true
 
+export NodeRedRepo="https://github.com/node-red/node-red.git"
+
 export defaultUpImg=default
 export defaultUpPort=5522
