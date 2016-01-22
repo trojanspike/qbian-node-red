@@ -5,7 +5,7 @@ export rootpass=raspberry
 export hostname=raspberrypi-qbian-node-red
 export minibain_img_url=http://sourceforge.net/projects/minibian/files/2015-02-18-wheezy-minibian.tar.gz/download
 
-export memory=512
+export memory=1024
 export consoleOnly=true
 
 # Qbain config for vagrant env
@@ -15,8 +15,6 @@ if [ "$USER" == "vagrant" ];then
 fi
 
 export useMySSH=true
-
-export NodeRedRepo="https://github.com/node-red/node-red.git"
 
 export defaultUpImg=default
 export defaultUpPort=5522

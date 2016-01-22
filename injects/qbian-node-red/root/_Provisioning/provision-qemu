@@ -46,17 +46,12 @@ sed -i "s/{USER}/$USER/g" /etc/sudoers.d/user-perm && \
 # Ruby RVM install : https://rvm.io/
 /bin/su - $USER -c "curl -sSL https://rvm.io/mpapis.asc | gpg --import -" && \
 /bin/su - $USER -c "curl -sSL https://get.rvm.io | bash -s stable --ruby --with-gems=\"compass sass\"" && \
-# node packages 
+# node packages
 /bin/su - $USER -c "cd ~/ && nvm install iojs-3.0.0 && nvm alias default iojs-3.0.0 && npm i npm -g" && \
 # ? other package? nodemon, jslint??
 /bin/su - $USER -c "cd ~/ && npm install forever node-gyp bower grunt-cli nodemon jsonlint jslint -g" && \
-/bin/su - $USER -c "cd ~/ && git clone $NodeRedRepo && cd ~/node-red && npm install" && \
-# On some caeses node-sass needs rebuilt - no idea why
-/bin/su - $USER -c "cd ~/node-red && npm rebuild node-sass" && \
 # Should be built and good to go
 sed -i "s/{USER}/$USER/g" /etc/init.d/qbian-node-red && \
-# install c9 ide : https://github.com/c9/core/
-/bin/su - $USER -c "cd ~/ && c9-install" && \ @@ HERE @@
 # no-group required :: usermod -a -G rvm $USER && \ @@ doesnt exist
 # /bin/su - $USER -c "curl -sSL https://rvm.io/mpapis.asc | gpg --import -"
 # /bin/su - $USER -c "rvm get stable --auto-dotfiles"

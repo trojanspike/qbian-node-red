@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# On some caeses node-sass needs rebuilt - no idea why
+git clone https://github.com/node-red/node-red.git && cd node-red && npm install && npm rebuild node-sass
