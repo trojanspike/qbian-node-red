@@ -44,12 +44,13 @@ git clone https://github.com/lurch/rpi-serial-console.git && \
 chmod +x /etc/init.d/* && \
 sed -i "s/{USER}/$USER/g" /etc/sudoers.d/user-perm && \
 # Ruby RVM install : https://rvm.io/
-/bin/su - $USER -c "curl -sSL https://rvm.io/mpapis.asc | gpg --import -" && \
-/bin/su - $USER -c "curl -sSL https://get.rvm.io | bash -s stable --ruby --with-gems=\"compass sass\"" && \
+# Install from /bin/node-red-install
+# /bin/su - $USER -c "curl -sSL https://rvm.io/mpapis.asc | gpg --import -" && \
+# /bin/su - $USER -c "curl -sSL https://get.rvm.io | bash -s stable --ruby --with-gems=\"compass sass\"" && \
 # node packages
 /bin/su - $USER -c "cd ~/ && nvm install iojs-3.0.0 && nvm alias default iojs-3.0.0 && npm i npm -g" && \
 # ? other package? nodemon, jslint??
-/bin/su - $USER -c "cd ~/ && npm install forever node-gyp bower grunt-cli nodemon jsonlint jslint -g" && \
+/bin/su - $USER -c "cd ~/ && npm install forever bower -g" && \
 # Should be built and good to go
 sed -i "s/{USER}/$USER/g" /etc/init.d/qbian-node-red && \
 # no-group required :: usermod -a -G rvm $USER && \ @@ doesnt exist

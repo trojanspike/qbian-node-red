@@ -1,4 +1,21 @@
 #!/usr/bin/env bash
 
-# On some caeses node-sass needs rebuilt - no idea why
-git clone https://github.com/node-red/node-red.git && cd node-red && npm install && npm rebuild node-sass
+NODE_RED_DIR=node_red
+
+function install_ruby_rvm(){
+  curl -sSL https://rvm.io/mpapis.asc | gpg --import - && \
+  curl -sSL https://get.rvm.io | bash -s stable --ruby --with-gems=\"compass sass\"
+}
+
+function install_node_red(){
+  npm install -g jsonlint jshint nodemon node-gyp grunt-cli && \
+  git clone https://github.com/node-red/node-red.git $NODE_RED_DIR && \
+  cd $NODE_RED_DIR && npm install && \
+  npm rebuild node-sass
+}
+
+if [ ! -d ~/.rvm/ ];then
+  install_ruby_rvm && install_node_red
+else
+  install_node_red
+fi
